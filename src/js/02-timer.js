@@ -75,7 +75,12 @@ startEl.addEventListener('click', () => {
     minutesEl.textContent = String(minutes).padStart(2, 0);
     secondsEl.textContent = String(seconds).padStart(2, 0);
 
-    if (difference === 0) {
+    if (
+      daysEl.textContent === '0' &&
+      hoursEl.textContent === '00' &&
+      minutesEl.textContent === '00' &&
+      secondsEl.textContent === '00'
+    ) {
       Notiflix.Notify.success('Happy birthday!!!');
       clearInterval(timer);
       clearInterval(timerStyle);
