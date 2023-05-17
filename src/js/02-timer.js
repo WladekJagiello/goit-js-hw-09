@@ -22,7 +22,7 @@ const inputEl = document.querySelector('input');
 inputEl.style.cssText = `border-width: 2px; border-radius: 2px`;
 const titleEl = document.createElement('h1');
 inputEl.before(titleEl);
-titleEl.textContent = 'SET TIMER';
+titleEl.textContent = 'Встанови таймер';
 const startEl = document.querySelector('[data-start]');
 startEl.style.cssText = `cursor: pointer; border-width: 2px; border-radius: 2px; background-color: #00FF00`;
 startEl.setAttribute('disabled', '');
@@ -44,8 +44,11 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < options.defaultDate) {
-      return Notiflix.Notify.failure('Please choose a date in the future');
+      return Notiflix.Notify.failure(
+        'Ця дата вже минула! Встанови дату та час з майбутнього ;)'
+      );
     }
+    Notiflix.Notify.warning('Можна спробувати натиснути Start ;)');
     startEl.removeAttribute('disabled');
     selectedDate = selectedDates[0].getTime();
     titleEl.textContent = '¯|_(ツ)_/¯';
@@ -53,9 +56,10 @@ const options = {
 };
 
 startEl.addEventListener('click', () => {
-  Notiflix.Notify.success('Timer started');
+  Notiflix.Notify.success('Відлік почався! Кнопка Stop теж працює ;)');
   inputEl.setAttribute('disabled', '');
   startEl.setAttribute('disabled', '');
+  startEl.textContent = 'Start';
 
   if (resetEl) {
     resetEl.remove();
@@ -87,7 +91,7 @@ startEl.addEventListener('click', () => {
       clearInterval(timerColor);
       timerEl.style.cssText = ``;
       inputEl.removeAttribute('disabled');
-      titleEl.textContent = 'SET TIMER';
+      titleEl.textContent = 'Встанови таймер';
       stopEl.remove();
     }
   }, 1000);
@@ -117,13 +121,16 @@ startEl.addEventListener('click', () => {
   }, 250);
 
   stopEl.addEventListener('click', () => {
-    Notiflix.Notify.warning('You don`t want to continue?');
+    Notiflix.Notify.warning(
+      'Можна продовжити - тисни Continue. Якщо набридло - Reset ;)'
+    );
     clearInterval(timer);
     clearInterval(timerStyle);
     clearInterval(timerColor);
     timerEl.style.cssText = ``;
     titleEl.textContent = '¯|_(ツ)_/¯';
     startEl.removeAttribute('disabled');
+    startEl.textContent = 'Continue';
     stopEl.remove();
     resetEl = document.createElement('button');
     resetEl.style.cssText = `cursor: pointer; margin-left: 4px; border-width: 2px; border-radius: 2px; background-color: #F08080`;
@@ -132,9 +139,10 @@ startEl.addEventListener('click', () => {
 
     resetEl.addEventListener('click', () => {
       startEl.setAttribute('disabled', '');
+      startEl.textContent = 'Start';
       inputEl.removeAttribute('disabled');
       resetEl.remove();
-      titleEl.textContent = 'SET TIMER';
+      titleEl.textContent = 'Встанови таймер';
       daysEl.textContent = '00';
       hoursEl.textContent = '00';
       minutesEl.textContent = '00';
