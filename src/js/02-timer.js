@@ -57,10 +57,14 @@ const options = {
 
 startEl.addEventListener('click', () => {
   if (
-    daysEl.textContent === '00' &&
-    hoursEl.textContent === '00' &&
-    minutesEl.textContent === '00' &&
-    secondsEl.textContent === '00'
+    (daysEl.textContent === '00' &&
+      hoursEl.textContent === '00' &&
+      minutesEl.textContent === '00' &&
+      secondsEl.textContent === '00') ||
+    (daysEl.textContent === '0' &&
+      hoursEl.textContent === '00' &&
+      minutesEl.textContent === '00' &&
+      secondsEl.textContent === '00')
   ) {
     Notiflix.Notify.success('Відлік почався! Кнопка Stop теж працює ;)');
   } else {
@@ -102,7 +106,6 @@ startEl.addEventListener('click', () => {
       timerEl.style.cssText = ``;
       inputEl.removeAttribute('disabled');
       titleEl.textContent = 'Встанови таймер';
-      daysEl.textContent === '00';
       stopEl.remove();
     }
   }, 1000);
