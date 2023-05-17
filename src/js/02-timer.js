@@ -56,7 +56,17 @@ const options = {
 };
 
 startEl.addEventListener('click', () => {
-  Notiflix.Notify.success('Відлік почався! Кнопка Stop теж працює ;)');
+  if (
+    daysEl.textContent === '00' &&
+    hoursEl.textContent === '00' &&
+    minutesEl.textContent === '00' &&
+    secondsEl.textContent === '00'
+  ) {
+    Notiflix.Notify.success('Відлік почався! Кнопка Stop теж працює ;)');
+  } else {
+    Notiflix.Notify.success('Мабуть сподобалось ;)');
+  }
+
   inputEl.setAttribute('disabled', '');
   startEl.setAttribute('disabled', '');
   startEl.textContent = 'Start';
