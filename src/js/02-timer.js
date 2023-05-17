@@ -138,6 +138,7 @@ startEl.addEventListener('click', () => {
     startEl.after(resetEl);
 
     resetEl.addEventListener('click', () => {
+      Notiflix.Notify.failure('Все пропало!');
       startEl.setAttribute('disabled', '');
       startEl.textContent = 'Start';
       inputEl.removeAttribute('disabled');
