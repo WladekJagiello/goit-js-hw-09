@@ -102,6 +102,7 @@ startEl.addEventListener('click', () => {
       timerEl.style.cssText = ``;
       inputEl.removeAttribute('disabled');
       titleEl.textContent = 'Встанови таймер';
+      daysEl.textContent === '00';
       stopEl.remove();
     }
   }, 1000);
