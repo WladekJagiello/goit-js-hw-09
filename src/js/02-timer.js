@@ -24,7 +24,7 @@ const titleEl = document.createElement('h1');
 inputEl.before(titleEl);
 titleEl.textContent = 'SET TIMER';
 const startEl = document.querySelector('[data-start]');
-startEl.style.cssText = `border-width: 2px; border-radius: 2px; background-color: #00FF00`;
+startEl.style.cssText = `cursor: pointer; border-width: 2px; border-radius: 2px; background-color: #00FF00`;
 startEl.setAttribute('disabled', '');
 const timerEl = document.querySelector('.timer');
 const daysEl = document.querySelector('[data-days]');
@@ -62,7 +62,7 @@ startEl.addEventListener('click', () => {
   }
 
   const stopEl = document.createElement('button');
-  stopEl.style.cssText = `margin-left: 4px; border-width: 2px; border-radius: 2px; background-color: #FFD700`;
+  stopEl.style.cssText = `cursor: pointer; margin-left: 4px; border-width: 2px; border-radius: 2px; background-color: #FFD700`;
   stopEl.textContent = 'Stop';
   startEl.after(stopEl);
 
@@ -126,7 +126,7 @@ startEl.addEventListener('click', () => {
     startEl.removeAttribute('disabled');
     stopEl.remove();
     resetEl = document.createElement('button');
-    resetEl.style.cssText = `margin-left: 4px; border-width: 2px; border-radius: 2px; background-color: #F08080`;
+    resetEl.style.cssText = `cursor: pointer; margin-left: 4px; border-width: 2px; border-radius: 2px; background-color: #F08080`;
     resetEl.textContent = 'Reset';
     startEl.after(resetEl);
 

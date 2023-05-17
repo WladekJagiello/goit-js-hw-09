@@ -23,7 +23,9 @@ function createBoxes() {
 
 const bodyEl = document.querySelector('body');
 const startEl = document.querySelector('[data-start]');
+startEl.style.cssText = `cursor: pointer;`;
 const stopEl = document.querySelector('[data-stop]');
+stopEl.style.cssText = `cursor: pointer;`;
 const divBox = document.createElement('div');
 stopEl.after(divBox);
 let interval;
