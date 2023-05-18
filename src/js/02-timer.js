@@ -66,7 +66,8 @@ startEl.addEventListener('click', () => {
       minutesEl.textContent === '00' &&
       secondsEl.textContent === '00')
   ) {
-    Notiflix.Notify.success('Відлік почався! Кнопка Stop теж працює ;)');
+    Notiflix.Notify.success('Відлік почався!');
+    Notiflix.Notify.warning('Кнопка Stop теж працює ;)');
   } else {
     Notiflix.Notify.success('Мабуть сподобалось ;)');
   }
@@ -135,9 +136,8 @@ startEl.addEventListener('click', () => {
   }, 250);
 
   stopEl.addEventListener('click', () => {
-    Notiflix.Notify.warning(
-      'Можна продовжити - тисни Continue. Якщо набридло - Reset ;)'
-    );
+    Notiflix.Notify.warning('Можна продовжити - тисни Continue...');
+    Notiflix.Notify.warning('Якщо набридло - Reset ;)');
     clearInterval(timer);
     clearInterval(timerStyle);
     clearInterval(timerColor);
