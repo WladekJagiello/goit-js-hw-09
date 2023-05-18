@@ -52,7 +52,7 @@ const options = {
     Notiflix.Notify.warning('Можна спробувати натиснути Start ;)');
     startEl.removeAttribute('disabled');
     selectedDate = selectedDates[0].getTime();
-    titleEl.textContent = '¯|_(ツ)_/¯';
+    titleEl.textContent = '¯\\_(ツ)_/¯';
   },
 };
 
