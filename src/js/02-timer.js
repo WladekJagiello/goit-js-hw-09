@@ -22,7 +22,7 @@ const inputEl = document.querySelector('input');
 inputEl.style.cssText = `border-width: 2px; border-radius: 2px`;
 const titleEl = document.createElement('h1');
 inputEl.before(titleEl);
-titleEl.textContent = 'Встанови таймер';
+titleEl.textContent = 'ВСТАНОВИ ТАЙМЕР';
 const startEl = document.querySelector('[data-start]');
 startEl.style.cssText = `cursor: pointer; border-width: 2px; border-radius: 2px; background-color: #00FF00`;
 startEl.setAttribute('disabled', '');
@@ -107,7 +107,7 @@ startEl.addEventListener('click', () => {
       clearInterval(timerColor);
       timerEl.style.cssText = ``;
       inputEl.removeAttribute('disabled');
-      titleEl.textContent = 'Встанови таймер';
+      titleEl.textContent = 'ВСТАНОВИ ТАЙМЕР';
       stopEl.remove();
     }
   }, 1000);
@@ -143,7 +143,7 @@ startEl.addEventListener('click', () => {
     clearInterval(timerStyle);
     clearInterval(timerColor);
     timerEl.style.cssText = ``;
-    titleEl.textContent = '¯|_(ツ)_/¯';
+    titleEl.textContent = '¯\\_(ツ)_/¯';
     startEl.removeAttribute('disabled');
     startEl.textContent = 'Continue';
     stopEl.remove();
