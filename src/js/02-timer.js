@@ -45,8 +45,9 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < options.defaultDate) {
       return Notiflix.Notify.failure(
-        'Ця дата вже минула! Встанови дату та час з майбутнього ;)'
-      );
+        'Ця дата вже минула!'
+      ),
+        Notiflix.Notify.warning('Встанови дату та час з майбутнього ;)');
     }
     Notiflix.Notify.warning('Можна спробувати натиснути Start ;)');
     startEl.removeAttribute('disabled');
