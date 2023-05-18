@@ -44,10 +44,10 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0] < options.defaultDate) {
-      return Notiflix.Notify.failure(
-        'Ця дата вже минула!'
-      ),
-        Notiflix.Notify.warning('Встанови дату та час з майбутнього ;)');
+      return (
+        Notiflix.Notify.failure('Ця дата вже минула!'),
+        Notiflix.Notify.warning('Встанови дату та час з майбутнього ;)')
+      );
     }
     Notiflix.Notify.warning('Можна спробувати натиснути Start ;)');
     startEl.removeAttribute('disabled');
@@ -158,7 +158,7 @@ startEl.addEventListener('click', () => {
       startEl.textContent = 'Start';
       inputEl.removeAttribute('disabled');
       resetEl.remove();
-      titleEl.textContent = 'Встанови таймер';
+      titleEl.textContent = 'ВСТАНОВИ ТАЙМЕР';
       daysEl.textContent = '00';
       hoursEl.textContent = '00';
       minutesEl.textContent = '00';
